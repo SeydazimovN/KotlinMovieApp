@@ -63,11 +63,7 @@ class DownloadRepositoryTask(var context: Context, var clickHandler: RecyclerAda
 
         println(data)
 
-        println("myContext")
-        println(myContext != null)
-        if (myContext != null) {
-            mRecyclerView?.adapter = RecyclerAdapter(context, clickHandler, titles, images)
-        }
+        mRecyclerView?.adapter = RecyclerAdapter(context, clickHandler, titles, images)
         super.onPostExecute(result)
     }
 }

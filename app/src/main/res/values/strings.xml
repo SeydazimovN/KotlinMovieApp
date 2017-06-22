@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Movie App in Kotlin</string>
-
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top rated</string>
+    <string name="action_settings">Settings</string>
+    <string name = "pref_sync"> show name </string>
+    <string name = "pref_sync_summ"> show my name to all users </string>
 </resources>

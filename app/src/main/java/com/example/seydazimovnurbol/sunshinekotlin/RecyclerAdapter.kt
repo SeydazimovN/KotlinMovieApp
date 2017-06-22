@@ -16,7 +16,7 @@ class RecyclerAdapter(var context: Context, var clickHandler: RecyclerAdapterOnC
     private val mClickHandler = clickHandler
 
     interface RecyclerAdapterOnClickHandler {
-        fun onClick(pos : Int);
+        fun onClick(pos: Int, s: String, substring: String);
     }
 
     override fun getItemCount(): Int {
@@ -27,21 +27,12 @@ class RecyclerAdapter(var context: Context, var clickHandler: RecyclerAdapterOnC
 
         holder.itemView.setOnClickListener {
             println("in holder.itemView.setOnClickListener")
-            mClickHandler.onClick(position)
-//            if (intent != null) {
-//                println("intent not null")
-//                holder.itemView.context.startActivity(intent)
-//            }
-//            else {
-//                println("intent is null?")
-////                intent = Intent();
-////                holder.itemView.context.startActivity(intent)
-//            }
+            mClickHandler.onClick(position, names[position], images[position].substring(1))
         }
 
         println(position)
-        holder.title.text = names[position]
-        var imageLink = "http://image.tmdb.org/t/p/w185/${images[position].substring(1)}"
+//        holder.title.text = names[position]
+        var imageLink = "http://image.tmdb.org/t/p/w780/${images[position].substring(1)}"
         println(imageLink)
         Picasso.with(context).load(imageLink).into(holder.image);
     }

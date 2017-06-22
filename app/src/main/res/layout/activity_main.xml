@@ -5,12 +5,45 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.seydazimovnurbol.sunshinekotlin.MainActivity">
+    tools:context="com.example.seydazimovnurbol.sunshinekotlin.MainActivity"
+    android:background="#000000">
 
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:background="#000000">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/popular"
+                android:padding="5dp"
+                android:layout_margin="2dp"
+                android:onClick="changeToPopular"
+                android:background="@color/colorMagenta"
+                android:id="@+id/popularButton"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_rated"
+                android:padding="5dp"
+                android:layout_margin="2dp"
+                android:onClick="changeToTopRated"
+                android:background="@color/colorCyan"
+                android:id="@+id/topRatedButton"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
 </FrameLayout>
